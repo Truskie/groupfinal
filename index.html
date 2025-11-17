@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentals of Computing</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Fundamentals of Computing</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#course">Course</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#project">Project</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#concepts">Concepts</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#databases">Databases</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#documentation">Documentation</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#dev">Dev Team</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!--Course-->
+    <section id="course" class="section">
+        <div class="container-fluid">
+            <div class="banner">
+                <h1>Fundamentals of Computing</h1>
+            </div>
+            
+            <div class="content-section">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div class="slideshow-container">
+                            <div class="slide active">
+                                <img src="assets/img1.webp" alt="Slide 1">
+                            </div>
+                            <div class="slide">
+                                <img src="assets/img2.webp" alt="Slide 2">
+                            </div>
+                            <div class="slide">
+                                <img src="assets/img3.webp" alt="Slide 3">
+                            </div>
+                            
+                            <button class="slide-nav prev" onclick="changeSlide(-1)">❮</button>
+                            <button class="slide-nav next" onclick="changeSlide(1)">❯</button>
+                            
+                            <div class="dots-container">
+                                <span class="dot active" onclick="goToSlide(0)"></span>
+                                <span class="dot" onclick="goToSlide(1)"></span>
+                                <span class="dot" onclick="goToSlide(2)"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="text-content">
+                            <p>
+                                This course is an introduction to the fundamentals of Computer Science that will provide students with a foundation for future courses in Computer Science. 
+                                The course is a broad survey of the discipline through topics that allow students to understand the capabilities of computer systems in terms of: the computer architecture; 
+                                operating systems and computer networks; software and software development; data organization and visualization; and the potential of computing machines.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Projects-->
+    <section id="project" class="section">
+        <div class="container-fluid">
+            <div class="banner">
+                <h1>Project</h1>
+            </div>
+            
+            <div class="content-section">
+                <div class="projects-container">
+                    
+                    <div class="projects-description mt-5">
+                        <p class="text-center">
+                            Click the buttons to view the project that each group member has done.
+                        </p>
+                    </div>
+                    
+                    <div class="projects-grid">
+                        <div class="project-card">
+                            <div class="project-icon">
+                                <h2>1</h2>
+                            </div>
+                            <h3>Terryl Neal</h3>
+                            <p>TCP/IP Model</p>
+                            <a href="https://truskie.github.io/ipproject/" class="project-link">View Project →</a>
+                        </div>
+                        
+                        <div class="project-card">
+                            <div class="project-icon">
+                                <h2>2</h2>
+                            </div>
+                            <h3>Michael Lammey</h3>
+                            <p>Placeholder Desc</p>
+                            <a href="" class="project-link">View Project →</a>
+                        </div>
+                        
+                        <div class="project-card">
+                            <div class="project-icon">
+                                <h2>3</h2>
+                            </div>
+                            <h3>Annabel Maddison</h3>
+                            <p>Historical Perspective</p>
+                            <a href="" class="project-link">View Project →</a>
+                        </div>
+                        
+                        <div class="project-card">
+                            <div class="project-icon">
+                                <h2>4</h2>
+                            </div>
+                            <h3>Daniel Pineda</h3>
+                            <p>Placeholder Desc</p>
+                            <a href="" class="project-link">View Project →</a>
+                        </div>
+                        
+                        <div class="project-card">
+                            <div class="project-icon">
+                                <h2>5</h2>
+                            </div>
+                            <h3>Lidia Marroquin</h3>
+                            <p>Data Manipulation</p>
+                            <a href="" class="project-link">View Project →</a>
+                        </div>
+                        
+                        <div class="project-card">
+                            <div class="project-icon">
+                                <h2>6</h2>
+                            </div>
+                            <h3>Gamba Masibuwa</h3>
+                            <p>Batch Processing</p>
+                            <a href="" class="project-link">View Project →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Concepts-->
+    <section id="concepts" class="section">
+        <div class="container-fluid">
+            <div class="banner">
+                <h1>Concepts</h1>
+            </div>
+            
+            <div class="content-section">
+                <div class="powerPoint"> 
+                    <p> 
+                        <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vR1vZJWX27OraR4ubdHdTyNxqrAq8qDeV938NS-DzbU1FuWfmQtqHqBpCJjdyYDm-MCmRcg1et3jC8M/pubembed?start=false&loop=true&delayms=10000" frameborder="0" width="100%" height="600px" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+                    </p> 
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Databases-->
+    <section id="databases" class="section">
+        <div class="container-fluid">
+            <div class="banner">
+                <h1>Databases</h1>
+            </div>
+            
+            <div class="content-section">
+                <div class="dataBases"> 
+                    <p> 
+                        <a href="https://drive.google.com/file/d/1gL6zYcdEBFgzvh-4iPgwfkvESouDlsbX/view">
+                            <img src="assets/db.webp" alt="database" width="650" height="500">
+                        </a>
+                    </p> 
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Documentation-->
+    <section id="documentation" class="section">
+        <div class="container-fluid">
+            <div class="banner">
+                <h1>Documentation</h1>
+            </div>
+            
+            <div class="content-section">
+                <div class="docDiv"> 
+                    <p> 
+                        <a href="https://drive.google.com/file/d/1emYNyAIPOih0PMWEr-woOZiIIOPaUv4t/view?usp=sharing">
+                            <img src="assets/documentation.webp" alt="documentation">
+                        </a>
+                    </p> 
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Dev Team Stuff (Ur descriptions and photos guys)-->
+	<section id="dev" class="section">
+		<div class="container-fluid">
+			<div class="banner">
+				<h1>Meet the Team</h1>
+			</div>
+			
+			<div class="content-section">
+				<div class="team-container">
+					<div class="team-intro">
+						<p>Our development team consists of dedicated students passionate about technology and software development. Click a member to view their resume or their individual website.</p>
+					</div>
+					
+					<div class="team-grid">
+						<div class="team-member">
+							<div class="member-image">
+								<img src="assets/member1.jpg" alt="Terryl Neal">
+								<div class="member-actions">
+									<a href="#" class="action-btn btn-resume">Resume</a>
+									<a href="https://truskie.github.io/" class="action-btn btn-website">Website</a>
+								</div>
+							</div>
+							<div class="member-info">
+								<h3>Terryl Neal</h3>
+								<p>My name is Terryl Neal. I am from Placencia Village and have a keen interest in Information Technology. I attended Independence High School and graduated with a major in Tourism.</p>
+							</div>
+						</div>
+						
+						<div class="team-member">
+							<div class="member-image">
+								<img src="assets/member2.jpg" alt="Michael Lammey">
+								<div class="member-actions">
+									<a href="#" class="action-btn btn-resume">Resume</a>
+									<a href="#" class="action-btn btn-website">Website</a>
+								</div>
+							</div>
+							<div class="member-info">
+								<h3>Michael Lammey</h3>
+								<p>Desc</p>
+							</div>
+						</div>
+						
+						<div class="team-member">
+							<div class="member-image">
+								<img src="assets/member3.jpg" alt="Annabel Maddison">
+								<div class="member-actions">
+									<a href="#" class="action-btn btn-resume">Resume</a>
+									<a href="#" class="action-btn btn-website">Website</a>
+								</div>
+							</div>
+							<div class="member-info">
+								<h3>Annabel Maddison</h3>
+								<p>Desc</p>
+							</div>
+						</div>
+						
+						<div class="team-member">
+							<div class="member-image">
+								<img src="assets/member4.jpg" alt="Daniel Pineda">
+								<div class="member-actions">
+									<a href="#" class="action-btn btn-resume">Resume</a>
+									<a href="#" class="action-btn btn-website">Website</a>
+								</div>
+							</div>
+							<div class="member-info">
+								<h3>Daniel Pineda</h3>
+								<p>Desc</p>
+							</div>
+						</div>
+						
+						<div class="team-member">
+							<div class="member-image">
+								<img src="assets/member5.jpg" alt="Lidia Marroquin">
+								<div class="member-actions">
+									<a href="#" class="action-btn btn-resume">Resume</a>
+									<a href="#" class="action-btn btn-website">Website</a>
+								</div>
+							</div>
+							<div class="member-info">
+								<h3>Lidia Marroquin</h3>
+								<p>Desc</p>
+							</div>
+						</div>
+						
+						<div class="team-member">
+							<div class="member-image">
+								<img src="assets/member6.jpg" alt="Gamba Masibuwa">
+								<div class="member-actions">
+									<a href="#" class="action-btn btn-resume">Resume</a>
+									<a href="#" class="action-btn btn-website">Website</a>
+								</div>
+							</div>
+							<div class="member-info">
+								<h3>Gamba Masibuwa</h3>
+								<p>Des</p>
+							</div>
+						</div>
+							
+						<div class="team-member">
+							<div class="member-image">
+								<img src="assets/member7.jpg" alt="Soila Paiz">
+								<div class="member-actions">
+									<a href="#" class="action-btn btn-resume">Resume</a>
+									<a href="#" class="action-btn btn-website">Website</a>
+								</div>
+							</div>
+							<div class="member-info">
+								<h3>Soila Paiz</h3>
+								<p>Desc</p>
+							</div>
+						</div>
+							
+						<div class="team-member">
+							<div class="member-image">
+								<img src="assets/member8.jpg" alt="Vashti Paredes">
+								<div class="member-actions">
+									<a href="#" class="action-btn btn-resume">Resume</a>
+									<a href="#" class="action-btn btn-website">Website</a>
+								</div>
+							</div>
+							<div class="member-info">
+								<h3>Vashti Paredes</h3>
+								<p>Desc</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+    <footer class="footer">
+        <div class="container-fluid">
+            <h1>© University Of Belize</h1>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

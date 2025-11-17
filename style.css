@@ -1,0 +1,503 @@
+/*Global stuff dw*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden;
+    background-image: url('assets/bg.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+	position: relative;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.25);
+	backdrop-filter: blur(4px);
+	-webkit-backdrop-filter: blur(4px);
+    z-index: -1;
+}
+
+/*Nav Bar*/
+.navbar {
+    background-color: #2c3e50;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.navbar-brand,
+.navbar-nav .nav-link {
+    color: #ecf0f1 !important;
+    font-weight: 500;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #3498db !important;
+}
+
+.navbar-toggler {
+    border-color: #ecf0f1;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.8%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/*Sectioning*/
+.section {
+    min-height: 100vh;
+    padding-top: 80px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+}
+
+/*Banner*/
+.banner {
+    background: linear-gradient(45deg, #212130, #39304A);
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+.banner h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.content-section {
+    flex: 1;
+    padding: 0 1rem 2rem;
+    padding-top: 125px;
+    position: relative;
+    z-index: 1;
+}
+
+/*Slideshow Controller stuff*/
+.slideshow-container {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.slide {
+    display: none;
+    width: 100%;
+}
+
+.slide.active {
+    display: block;
+}
+
+.slide img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.slide-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
+}
+
+.slide-nav.prev {
+    left: 10px;
+}
+
+.slide-nav.next {
+    right: 10px;
+}
+
+.slide-nav:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.dots-container {
+    text-align: center;
+    padding: 10px 0;
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+}
+
+.dot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dot.active {
+    background-color: #3498db;
+}
+
+/* Text Content */
+.text-content {
+    padding: 20px;
+    font-size: 1.1rem;
+    line-height: 1.8;
+	color: white;
+    background: rgba(50, 40, 56, 0.95);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+}
+
+/*Projects Section*/
+.projects-container {
+    max-width: 1200px;
+    margin: 0 auto;
+	color: white;
+}
+
+.projects-description {
+	padding-bottom: 80px;
+	padding-top: 0px;
+	color: white;
+}
+
+.projects-description h3 {
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background: rgba(50, 40, 56, 0.95);
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+    backdrop-filter: blur(5px);
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    background: rgba(87, 42, 118, 1);
+}
+
+.project-card h3:hover{
+	color: white;
+}
+
+.project-icon {
+    background: #34104e;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+}
+
+.project-icon h2 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.project-card h3 {
+    color: white;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.project-card p {
+    color: #7f8c8d;
+    margin-bottom: 1.5rem;
+}
+
+.project-link {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.project-link:hover {
+    color: #2980b9;
+}
+
+/*Ppt and Database*/
+.powerPoint, .dataBases, .docDiv {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.powerPoint iframe, .dataBases img, .docDiv img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+}
+
+
+/*Dev team*/
+.team-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.team-intro {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 1.1rem;
+    color: white;
+    background: linear-gradient(75deg, #212130, #39304A);
+    padding: 1.5rem;
+    border-radius: 5px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+}
+
+/* Grid controller for dev team section */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.team-member {
+    background: linear-gradient(75deg, #212130, #39304A);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+    padding-bottom: 1.5rem;
+    backdrop-filter: blur(5px);
+    position: relative;
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    background: linear-gradient(75deg,#631e94, #212130);
+}
+
+.member-image {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    position: relative;
+}
+
+.member-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.team-member:hover .member-image img {
+    transform: scale(1.05);
+}
+
+.member-info {
+    padding: 1.5rem 1rem 0;
+}
+
+.member-info h3 {
+    color: white;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.member-info p {
+    color: #d4d2d5;
+    line-height: 1.6;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+/* Action buttons */
+.member-actions {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(33, 33, 48, 0.9);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    backdrop-filter: blur(2px);
+}
+
+.team-member:hover .member-actions {
+    opacity: 1;
+}
+
+.action-btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 25px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    min-width: 120px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.btn-resume {
+    background: linear-gradient(45deg, #3498db, #2980b9);
+    color: white;
+}
+
+.btn-resume:hover {
+    background: linear-gradient(45deg, #2980b9, #3498db);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+}
+
+.btn-website {
+    background: linear-gradient(45deg, #9b59b6, #8e44ad);
+    color: white;
+}
+
+.btn-website:hover {
+    background: linear-gradient(45deg, #8e44ad, #9b59b6);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(155, 89, 182, 0.4);
+}
+
+.footer {
+    background-color: rgba(44, 62, 80, 0.95);
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: auto;
+    backdrop-filter: blur(5px);
+}
+
+.footer h1 {
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .team-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 992px) {
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .banner h1 {
+        font-size: 2rem;
+    }
+    
+    .slide img {
+        height: 300px;
+    }
+    
+    .projects-grid,
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .text-content {
+        padding: 10px;
+    }
+    
+    .section {
+        padding-top: 70px;
+    }
+    
+    .content-section {
+        padding-top: 100px;
+    }
+    
+    .action-btn {
+        padding: 0.6rem 1.2rem;
+        min-width: 100px;
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .banner h1 {
+        font-size: 1.8rem;
+    }
+    
+    .slide img {
+        height: 250px;
+    }
+    
+    .project-card,
+    .team-member {
+        padding: 1.5rem;
+    }
+    
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .member-actions {
+        gap: 0.75rem;
+    }
+    
+    .action-btn {
+        padding: 0.5rem 1rem;
+        min-width: 90px;
+        font-size: 0.8rem;
+    }
+}
