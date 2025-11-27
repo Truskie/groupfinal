@@ -1,4 +1,4 @@
-/*Global stuff dw*/
+/*Global stuff*/
 * {
     margin: 0;
     padding: 0;
@@ -19,7 +19,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-	position: relative;
+    position: relative;
 }
 
 body::before {
@@ -30,19 +30,24 @@ body::before {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.25);
-	backdrop-filter: blur(4px);
-	-webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
     z-index: -1;
 }
 
 /*Nav Bar*/
 .navbar {
-    background-color: #2c3e50;
+    background-color: #2c3e50 !important;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     z-index: 1000;
+    transition: background-color 0.3s ease;
 }
 
-.navbar-brand,
+.navbar-brand {
+    color: #ecf0f1 !important;
+    font-weight: 500;
+}
+
 .navbar-nav .nav-link {
     color: #ecf0f1 !important;
     font-weight: 500;
@@ -87,7 +92,7 @@ body::before {
     margin: 0;
 }
 
-.content-section {
+.contentSection {
     flex: 1;
     padding: 0 1rem 2rem;
     padding-top: 125px;
@@ -96,7 +101,7 @@ body::before {
 }
 
 /*Slideshow Controller stuff*/
-.slideshow-container {
+.slideshowContainer {
     position: relative;
     max-width: 100%;
     margin: auto;
@@ -120,7 +125,7 @@ body::before {
     object-fit: cover;
 }
 
-.slide-nav {
+.slideNav {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -131,21 +136,22 @@ body::before {
     cursor: pointer;
     font-size: 18px;
     border-radius: 5px;
+    transition: background-color 0.3s;
 }
 
-.slide-nav.prev {
+.slideNav.prev {
     left: 10px;
 }
 
-.slide-nav.next {
+.slideNav.next {
     right: 10px;
 }
 
-.slide-nav:hover {
+.slideNav:hover {
     background-color: rgba(0, 0, 0, 0.7);
 }
 
-.dots-container {
+.dotsContainer {
     text-align: center;
     padding: 10px 0;
     position: absolute;
@@ -168,12 +174,12 @@ body::before {
     background-color: #3498db;
 }
 
-/* Text Content */
-.text-content {
+/*Text*/
+.textContent {
     padding: 20px;
     font-size: 1.1rem;
     line-height: 1.8;
-	color: white;
+    color: white;
     background: rgba(50, 40, 56, 0.95);
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -181,50 +187,42 @@ body::before {
 }
 
 /*Projects Section*/
-.projects-container {
+.projectsContainer {
     max-width: 1200px;
     margin: 0 auto;
-	color: white;
+    color: white;
 }
 
-.projects-description {
-	padding-bottom: 80px;
-	padding-top: 0px;
-	color: white;
+.projectsDescription {
+    padding-bottom: 80px;
+    padding-top: 0px;
+    color: white;
+    text-align: center;
 }
 
-.projects-description h3 {
-    color: #2c3e50;
-    font-weight: 600;
-}
-
-.projects-grid {
+.projectsGrid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
 }
 
-.project-card {
+.projectCard {
     background: rgba(50, 40, 56, 0.95);
     border-radius: 10px;
     padding: 2rem;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
     text-align: center;
     backdrop-filter: blur(5px);
 }
 
-.project-card:hover {
+.projectCard:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
     background: rgba(87, 42, 118, 1);
 }
 
-.project-card h3:hover{
-	color: white;
-}
-
-.project-icon {
+.projectIcon {
     background: #34104e;
     color: white;
     width: 60px;
@@ -236,30 +234,30 @@ body::before {
     margin: 0 auto 1.5rem;
 }
 
-.project-icon h2 {
+.projectIcon h2 {
     margin: 0;
     font-size: 1.5rem;
 }
 
-.project-card h3 {
+.projectCard h3 {
     color: white;
     margin-bottom: 1rem;
     font-weight: 600;
 }
 
-.project-card p {
+.projectCard p {
     color: #7f8c8d;
     margin-bottom: 1.5rem;
 }
 
-.project-link {
+.projectLink {
     color: #3498db;
     text-decoration: none;
     font-weight: 600;
     transition: color 0.3s;
 }
 
-.project-link:hover {
+.projectLink:hover {
     color: #2980b9;
 }
 
@@ -277,14 +275,186 @@ body::before {
     padding: 10px;
 }
 
+/*Concepts Carousel*/
+.conceptsCarousel {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.conceptSlide {
+    display: none;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+}
+
+.conceptSlide.active {
+    display: block;
+}
+
+.conceptSlide iframe {
+    width: 100%;
+    height: 600px;
+    border: none;
+    border-radius: 8px;
+}
+
+.conceptNav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.conceptNav.prev {
+    left: 10px;
+}
+
+.conceptNav.next {
+    right: 10px;
+}
+
+.conceptNav:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.conceptDotsContainer {
+    text-align: center;
+    padding: 10px 0;
+}
+
+.conceptDot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.conceptDot.active {
+    background-color: #3498db;
+}
+
+/*Concepts Grid*/
+.conceptsContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    color: white;
+}
+
+.conceptsGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.conceptCard {
+    background: rgba(50, 40, 56, 0.95);
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+    text-align: center;
+    backdrop-filter: blur(5px);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.conceptCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    background: rgba(87, 42, 118, 1);
+}
+
+.conceptIcon {
+    background: #34104e;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+}
+
+.conceptIcon h2 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.conceptCard h3 {
+    color: white;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
+.conceptCard p {
+    color: #7f8c8d;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.conceptLink {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+    padding: 0.75rem 1.5rem;
+    border: 2px solid #3498db;
+    border-radius: 25px;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.conceptLink:hover {
+    color: white;
+    background-color: #3498db;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+}
+
+@media (max-width: 992px) {
+    .conceptsGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .conceptsGrid {
+        grid-template-columns: 1fr;
+    }
+    
+    .conceptCard {
+        padding: 1.5rem;
+    }
+}
 
 /*Dev team*/
-.team-container {
+.teamContainer {
     max-width: 1400px;
     margin: 0 auto;
 }
 
-.team-intro {
+.teamIntro {
     text-align: center;
     margin-bottom: 3rem;
     font-size: 1.1rem;
@@ -296,68 +466,68 @@ body::before {
     backdrop-filter: blur(5px);
 }
 
-/* Grid controller for dev team section */
-.team-grid {
+/*Grid*/
+.teamGrid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
 }
 
-.team-member {
+.teamMember {
     background: linear-gradient(75deg, #212130, #39304A);
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
     text-align: center;
     padding-bottom: 1.5rem;
     backdrop-filter: blur(5px);
     position: relative;
 }
 
-.team-member:hover {
+.teamMember:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
     background: linear-gradient(75deg,#631e94, #212130);
 }
 
-.member-image {
+.memberImage {
     width: 100%;
     height: 250px;
     overflow: hidden;
     position: relative;
 }
 
-.member-image img {
+.memberImage img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.5s;
 }
 
-.team-member:hover .member-image img {
+.teamMember:hover .memberImage img {
     transform: scale(1.05);
 }
 
-.member-info {
+.memberInfo {
     padding: 1.5rem 1rem 0;
 }
 
-.member-info h3 {
+.memberInfo h3 {
     color: white;
     margin-bottom: 1rem;
     font-weight: 600;
 }
 
-.member-info p {
+.memberInfo p {
     color: #d4d2d5;
     line-height: 1.6;
     font-size: 0.9rem;
     margin-bottom: 1rem;
 }
 
-/* Action buttons */
-.member-actions {
+/*Action*/
+.memberActions {
     position: absolute;
     top: 0;
     left: 0;
@@ -374,11 +544,11 @@ body::before {
     backdrop-filter: blur(2px);
 }
 
-.team-member:hover .member-actions {
+.teamMember:hover .memberActions {
     opacity: 1;
 }
 
-.action-btn {
+.actionBtn {
     padding: 0.75rem 1.5rem;
     border: none;
     border-radius: 25px;
@@ -391,23 +561,23 @@ body::before {
     font-size: 0.9rem;
 }
 
-.btn-resume {
+.btnResume {
     background: linear-gradient(45deg, #3498db, #2980b9);
     color: white;
 }
 
-.btn-resume:hover {
+.btnResume:hover {
     background: linear-gradient(45deg, #2980b9, #3498db);
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
 }
 
-.btn-website {
+.btnWebsite {
     background: linear-gradient(45deg, #9b59b6, #8e44ad);
     color: white;
 }
 
-.btn-website:hover {
+.btnWebsite:hover {
     background: linear-gradient(45deg, #8e44ad, #9b59b6);
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(155, 89, 182, 0.4);
@@ -427,15 +597,15 @@ body::before {
     margin: 0;
 }
 
-/* Responsive Design */
+/*Responsive*/
 @media (max-width: 1200px) {
-    .team-grid {
-        grid-template-columns: repeat(3, 1fr);
+    .teamGrid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (max-width: 992px) {
-    .team-grid {
+    .teamGrid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
@@ -449,12 +619,12 @@ body::before {
         height: 300px;
     }
     
-    .projects-grid,
-    .team-grid {
+    .projectsGrid,
+    .teamGrid {
         grid-template-columns: 1fr;
     }
     
-    .text-content {
+    .textContent {
         padding: 10px;
     }
     
@@ -462,11 +632,11 @@ body::before {
         padding-top: 70px;
     }
     
-    .content-section {
+    .contentSection {
         padding-top: 100px;
     }
     
-    .action-btn {
+    .actionBtn {
         padding: 0.6rem 1.2rem;
         min-width: 100px;
         font-size: 0.85rem;
@@ -482,20 +652,20 @@ body::before {
         height: 250px;
     }
     
-    .project-card,
-    .team-member {
+    .projectCard,
+    .teamMember {
         padding: 1.5rem;
     }
     
-    .team-grid {
+    .teamGrid {
         grid-template-columns: 1fr;
     }
     
-    .member-actions {
+    .memberActions {
         gap: 0.75rem;
     }
     
-    .action-btn {
+    .actionBtn {
         padding: 0.5rem 1rem;
         min-width: 90px;
         font-size: 0.8rem;
